@@ -92,7 +92,7 @@ Add buttons and set their commands to `MeasureLengthCommand` and `MeasureAreaCom
 </StackPanel>
 ```
 
-### 📍Add Drawings to map
+### 📍Add drawings to map
 To draw point/line/polygon add buttons and set their commands.
 ```xaml
 <StackPanel Orientation="Horizontal" > 
@@ -106,6 +106,12 @@ To draw point/line/polygon add buttons and set their commands.
 To user Go To dialog all you need is to add a button and set its command.
 ```xaml
  <Button Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
+```
+
+### 📍Show current mouse position
+You can show the current mouse position in geographic (wgs84), utm, mercator, and several other spatial reference systems. To do that just add the `CoordinatePanelView` component and bind its `Position` property to the `map`:
+```xaml
+<maptor:CoordinatePanelView DataContext="{Binding CoordinatePanel}" Position="{Binding CurrentPoint, ElementName=map}"/>
 ```
 
 ## 📜 License
