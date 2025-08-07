@@ -4,7 +4,6 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/hosseinnarimanirad/MaptorSamples/blob/main/LICENSE)
 
 A demonstration of building map-enabled applications with minimal code using the Maptor spatial library.
-<img width="955" height="776" alt="image" src="" />
 
 ![Maptor Sample Application Screenshot](https://github.com/user-attachments/assets/e4c20caf-89a6-4b95-850e-31f30f8639cc)
 
