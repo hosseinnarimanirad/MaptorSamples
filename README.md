@@ -4,8 +4,9 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/hosseinnarimanirad/MaptorSamples/blob/main/LICENSE)
 
 A demonstration of building map-enabled applications with minimal code using the Maptor spatial library.
+<img width="955" height="776" alt="image" src="" />
 
-![Maptor Sample Application Screenshot](https://github.com/user-attachments/assets/3dd6db8d-7442-4dbd-97ed-68039ea07f6e)
+![Maptor Sample Application Screenshot](https://github.com/user-attachments/assets/e4c20caf-89a6-4b95-850e-31f30f8639cc)
 
 ## ✨ Features
 
@@ -13,7 +14,6 @@ A demonstration of building map-enabled applications with minimal code using the
 - 📏 **Measurement Tools** for distance and area
 - ✏️ **Drawing Tools** (points, lines, polygons)
 - 🔍 **GoTo Location** navigation
-- 👁️ **Layer Management** (visibility control, ordering)
 - 🔄 **Coordinate System Transformations**
 - 🖱️ **Mouse Coordinate Tracking**
 
