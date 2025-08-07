@@ -32,9 +32,8 @@ git clone https://github.com/hosseinnarimanirad/Maptor.git
 4. Build and run the application
 
 ## 🛠️ Building Your Own Map Application
-1. Project Setup
-
-Create a new WPF project targeting .NET 8 or higher.
+### 📍Project Setup
+1. Create a new WPF project targeting .NET 8 or higher.
 
 2. Install Required Packages
 ```bash
@@ -76,19 +75,37 @@ private async void Window_Loaded(object sender, RoutedEventArgs e)
     presenter.ZoomToExtent(BoundingBoxes.WebMercator_Africa, false, isNewExtent: true);
 }
  ```
-6. Add Map Tools (Optional)
+### 📍Add shapefiles to map
+Add a button and set its command to `AddShapefileCommand`
+
 ```xaml
-<StackPanel Orientation="Horizontal" >
-    <Button Content="{Binding ClearText}" Command="{Binding ClearAllCommand}"/>
-    <Button Content="{Binding FullExtentText}" Command="{Binding FullExtentCommand}"/>
-    <Button Content="{Binding AddShapefileText}" Command="{Binding AddShapefileCommand}"/>
+<Button Content="{Binding AddShapefileText}" Command="{Binding AddShapefileCommand}"/>
+```
+
+### 📍Measure distance and area
+Add buttons and set their commands to `MeasureLengthCommand` and `MeasureAreaCommand`.
+
+```xaml
+<StackPanel Orientation="Horizontal" >     
     <Button Content="{Binding MeasureLengthText}" Command="{Binding MeasureLengthCommand}"/>
     <Button Content="{Binding MeasureAreaText}" Command="{Binding MeasureAreaCommand}"/>
+</StackPanel>
+```
+
+### 📍Add Drawings to map
+To draw point/line/polygon add buttons and set their commands.
+```xaml
+<StackPanel Orientation="Horizontal" > 
     <Button Content="{Binding DrawPointText}" Command="{Binding DrawPointCommand}"/>
     <Button Content="{Binding DrawPolylineText}" Command="{Binding DrawPolylineCommand}"/>
-    <Button Content="{Binding DrawPolygonText}" Command="{Binding DrawPolygonCommand}"/>
-    <Button Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
+    <Button Content="{Binding DrawPolygonText}" Command="{Binding DrawPolygonCommand}"/> 
 </StackPanel>
+```
+
+### 📍Use Go To dialog
+To user Go To dialog all you need is to add a button and set its command.
+```xaml
+ <Button Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
 ```
 
 ## 📜 License
