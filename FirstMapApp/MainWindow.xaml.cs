@@ -2,6 +2,7 @@
 using IRI.Maptor.Sta.Common.Primitives;
 using IRI.Maptor.Jab.Common.TileServices;
 using IRI.Maptor.Jab.Controls.Presenter;
+using System.Text;
 
 namespace FirstMapApp;
 
@@ -12,28 +13,30 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 
-private async void Window_Loaded(object sender, RoutedEventArgs e)
-{
-    // load prerequisites 
-    try
+    private async void Window_Loaded(object sender, RoutedEventArgs e)
     {
-        SqlServerTypes.Utilities.LoadNativeAssembliesv14(Environment.CurrentDirectory);
+        // load prerequisites 
+        System.Text.Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
+        try
+        {
+            SqlServerTypes.Utilities.LoadNativeAssembliesv14(Environment.CurrentDirectory);
+        }
+        catch
+        {
+            MessageBox.Show("error!");
+        }
+
+        // config
+        var presenter = new MapApplicationPresenter();
+
+        await this.map.Register(presenter);
+
+        presenter.Initialize(this);
+
+        // set initial map and extent
+        presenter.SelectedMapProvider = TileMapProviderFactory.GoogleRoadMap;
+
+        presenter.ZoomToExtent(BoundingBoxes.WebMercator_Africa, false, isNewExtent: true);
     }
-    catch
-    {
-        MessageBox.Show("error!");
-    }
-
-    // config
-    var presenter = new MapApplicationPresenter();
-
-    await this.map.Register(presenter);
-
-    presenter.Initialize(this);
-
-    // set initial map and extent
-    presenter.SelectedMapProvider = TileMapProviderFactory.GoogleRoadMap;
-
-    presenter.ZoomToExtent(BoundingBoxes.WebMercator_Africa, false, isNewExtent: true);
-}
 }

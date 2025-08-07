@@ -8,6 +8,7 @@
         <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource {x:Type TabItem}}">
             <Setter Property="mahApp:HeaderedControlHelper.HeaderFontSize" Value="12" />
         </Style>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource flatButtonPrimary}"/>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -18,24 +19,24 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <maptor:LanguageCombo/>
-        
-<StackPanel Grid.Column="1">
-    <Border BorderBrush="Black" BorderThickness="1" Margin="2">
-        <StackPanel Orientation="Horizontal" >
-            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding ClearText}" Command="{Binding ClearAllCommand}"/>
-            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding FullExtentText}" Command="{Binding FullExtentCommand}"/>
-            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding AddShapefileText}" Command="{Binding AddShapefileCommand}"/>
-            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding MeasureLengthText}" Command="{Binding MeasureLengthCommand}"/>
-            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding MeasureAreaText}" Command="{Binding MeasureAreaCommand}"/>
-            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPointText}" Command="{Binding DrawPointCommand}"/>
-            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPolylineText}" Command="{Binding DrawPolylineCommand}"/>
-            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPolygonText}" Command="{Binding DrawPolygonCommand}"/>
-            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
+
+        <StackPanel Grid.Column="1">
+            <Border BorderBrush="Black" BorderThickness="1" Margin="2">
+                <StackPanel Orientation="Horizontal" >
+                    <Button Margin="4" Content="{Binding ClearText}" Command="{Binding ClearAllCommand}"/>
+                    <Button Margin="4" Content="{Binding FullExtentText}" Command="{Binding FullExtentCommand}"/>
+                    <Button Margin="4" Content="{Binding AddShapefileText}" Command="{Binding AddShapefileCommand}"/>
+                    <Button Margin="4" Content="{Binding MeasureLengthText}" Command="{Binding MeasureLengthCommand}"/>
+                    <Button Margin="4" Content="{Binding MeasureAreaText}" Command="{Binding MeasureAreaCommand}"/>
+                    <Button Margin="4" Content="{Binding DrawPointText}" Command="{Binding DrawPointCommand}"/>
+                    <Button Margin="4" Content="{Binding DrawPolylineText}" Command="{Binding DrawPolylineCommand}"/>
+                    <Button Margin="4" Content="{Binding DrawPolygonText}" Command="{Binding DrawPolygonCommand}"/>
+                    <Button Margin="4" Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
+                </StackPanel>
+            </Border>
         </StackPanel>
-    </Border> 
-</StackPanel>
 
         <maptor:MapViewer Grid.Row="1" Grid.Column="1" x:Name="map" BorderBrush="Black" BorderThickness="1"/>
 
@@ -44,16 +45,9 @@
         <maptor:CoordinatePanelView Grid.Column="1" Grid.Row="1" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                     DataContext="{Binding CoordinatePanel}" Position="{Binding CurrentPoint, ElementName=map}"/>
 
-        <StackPanel Grid.Row="1">
-            <Expander DockPanel.Dock="Top" IsExpanded="True" Margin="0,1,0,0" Cursor="Hand" Header="{Binding BaseMapsText}">
-                <ComboBox ItemsSource="{Binding MapProviders}" SelectedItem="{Binding SelectedMapProvider, Mode=TwoWay}" DisplayMemberPath="Title"/>
-            </Expander>
-            <Expander DockPanel.Dock="Top" IsExpanded="True" Margin="0,1,0,0" Cursor="Hand" Header="{Binding DrawingsText}">
-                <maptor:MapDrawingLegendView MinHeight="90"/>
-            </Expander>
-            <Expander DockPanel.Dock="Top" IsExpanded="True" Margin="0,1,0,0" Cursor="Hand" Header="{Binding LayersText}">
-                <maptor:MapLegendWithOptionsView EnableFilterMode="True" DataContext="{Binding Layers}" GroupName="B"/>
-            </Expander>
-        </StackPanel>
+        <Expander Grid.Row="1" IsExpanded="True" Margin="0,1,0,0" Cursor="Hand" Header="{Binding LayersText}">
+            <maptor:MapLegendWithOptionsView EnableFilterMode="True" DataContext="{Binding Layers}" GroupName="B"/>
+        </Expander>
+
     </Grid>
 </Window>

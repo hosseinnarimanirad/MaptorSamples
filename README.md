@@ -63,7 +63,8 @@ dotnet add package IRI.Maptor.Jab.Controls
 ```csharp
 private async void Window_Loaded(object sender, RoutedEventArgs e)
 {
-    // Load native assemblies
+    // Initial Configs
+    System.Text.Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
     SqlServerTypes.Utilities.LoadNativeAssembliesv14(Environment.CurrentDirectory);
 
     // Initialize map presenter (viewmodel)

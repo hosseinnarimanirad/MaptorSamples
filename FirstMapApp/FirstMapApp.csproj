@@ -142,6 +142,48 @@
     <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.1\contentFiles\any\net8.0\SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x64\msvcr100.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x64\msvcr110.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x64\SqlServerSpatial110.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x64\SqlServerSpatial120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x64\SqlServerSpatial130.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x86\msvcr100.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x86\msvcr110.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x86\SqlServerSpatial110.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x86\SqlServerSpatial120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x86\SqlServerSpatial130.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="C:\Users\Hossein\.nuget\packages\iri.maptor.bas.sqlspatialloader\2.5.2\contentFiles\any\net8.0\SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
