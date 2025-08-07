@@ -27,16 +27,13 @@ public partial class MainWindow : Window
             MessageBox.Show("error!");
         }
 
-        // config
+        // Initialize map presenter (viewmodel)
         var presenter = new MapApplicationPresenter();
-
         await this.map.Register(presenter);
-
         presenter.Initialize(this);
 
-        // set initial map and extent
+        // Configure initial view
         presenter.SelectedMapProvider = TileMapProviderFactory.GoogleRoadMap;
-
         presenter.ZoomToExtent(BoundingBoxes.WebMercator_Africa, false, isNewExtent: true);
     }
 }

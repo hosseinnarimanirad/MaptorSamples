@@ -4,7 +4,9 @@
         xmlns:maptor="clr-namespace:IRI.Maptor.Jab.Controls.View;assembly=IRI.Maptor.Jab.Controls"  
         Loaded="Window_Loaded" Title="Sample Maptor App" Height="700" Width="900" FlowDirection="{Binding CurrentFlowDirection}">
     <Window.Resources>
-        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource flatButtonPrimary}"/>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource flatButtonPrimary}">
+            <Setter Property="Margin" Value="4"/>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -21,15 +23,15 @@
         <StackPanel Grid.Column="1">
             <Border BorderBrush="Black" BorderThickness="1" Margin="2">
                 <StackPanel Orientation="Horizontal" >
-                    <Button Margin="4" Content="{Binding ClearText}" Command="{Binding ClearAllCommand}"/>
-                    <Button Margin="4" Content="{Binding FullExtentText}" Command="{Binding FullExtentCommand}"/>
-                    <Button Margin="4" Content="{Binding AddShapefileText}" Command="{Binding AddShapefileCommand}"/>
-                    <Button Margin="4" Content="{Binding MeasureLengthText}" Command="{Binding MeasureLengthCommand}"/>
-                    <Button Margin="4" Content="{Binding MeasureAreaText}" Command="{Binding MeasureAreaCommand}"/>
-                    <Button Margin="4" Content="{Binding DrawPointText}" Command="{Binding DrawPointCommand}"/>
-                    <Button Margin="4" Content="{Binding DrawPolylineText}" Command="{Binding DrawPolylineCommand}"/>
-                    <Button Margin="4" Content="{Binding DrawPolygonText}" Command="{Binding DrawPolygonCommand}"/>
-                    <Button Margin="4" Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
+                    <Button Content="{Binding ClearText}" Command="{Binding ClearAllCommand}"/>
+                    <Button Content="{Binding FullExtentText}" Command="{Binding FullExtentCommand}"/>
+                    <Button Content="{Binding AddShapefileText}" Command="{Binding AddShapefileCommand}"/>
+                    <Button Content="{Binding MeasureLengthText}" Command="{Binding MeasureLengthCommand}"/>
+                    <Button Content="{Binding MeasureAreaText}" Command="{Binding MeasureAreaCommand}"/>
+                    <Button Content="{Binding DrawPointText}" Command="{Binding DrawPointCommand}"/>
+                    <Button Content="{Binding DrawPolylineText}" Command="{Binding DrawPolylineCommand}"/>
+                    <Button Content="{Binding DrawPolygonText}" Command="{Binding DrawPolygonCommand}"/>
+                    <Button Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
                 </StackPanel>
             </Border>
         </StackPanel>

@@ -80,16 +80,16 @@ private async void Window_Loaded(object sender, RoutedEventArgs e)
 6. Add Map Tools (Optional)
 ```xaml
 <StackPanel Orientation="Horizontal" >
-    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding ClearText}" Command="{Binding ClearAllCommand}"/>
-    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding FullExtentText}" Command="{Binding FullExtentCommand}"/>
-    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding AddShapefileText}" Command="{Binding AddShapefileCommand}"/>
-    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding MeasureLengthText}" Command="{Binding MeasureLengthCommand}"/>
-    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding MeasureAreaText}" Command="{Binding MeasureAreaCommand}"/>
-    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPointText}" Command="{Binding DrawPointCommand}"/>
-    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPolylineText}" Command="{Binding DrawPolylineCommand}"/>
-    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPolygonText}" Command="{Binding DrawPolygonCommand}"/>
-    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
-</StackPanel> 
+    <Button Content="{Binding ClearText}" Command="{Binding ClearAllCommand}"/>
+    <Button Content="{Binding FullExtentText}" Command="{Binding FullExtentCommand}"/>
+    <Button Content="{Binding AddShapefileText}" Command="{Binding AddShapefileCommand}"/>
+    <Button Content="{Binding MeasureLengthText}" Command="{Binding MeasureLengthCommand}"/>
+    <Button Content="{Binding MeasureAreaText}" Command="{Binding MeasureAreaCommand}"/>
+    <Button Content="{Binding DrawPointText}" Command="{Binding DrawPointCommand}"/>
+    <Button Content="{Binding DrawPolylineText}" Command="{Binding DrawPolylineCommand}"/>
+    <Button Content="{Binding DrawPolygonText}" Command="{Binding DrawPolygonCommand}"/>
+    <Button Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
+</StackPanel>
 ```
 
 ## 📜 License
