@@ -16,6 +16,7 @@ public partial class MainWindow : Window
 
     private async void Window_Loaded(object sender, RoutedEventArgs e)
     {
+        // load prerequisites 
         try
         {
             SqlServerTypes.Utilities.LoadNativeAssembliesv14(Environment.CurrentDirectory);
@@ -25,14 +26,13 @@ public partial class MainWindow : Window
             MessageBox.Show("error!");
         }
 
+        // config
         var presenter = new MapApplicationPresenter();
 
         await this.map.Register(presenter);
 
         presenter.Initialize(this);
-
-        this.DataContext = presenter;
-
+         
         presenter.ZoomToExtent(BoundingBoxes.WebMercator_Africa, false, isNewExtent: true);
 
         presenter.SelectedMapProvider = TileMapProviderFactory.GoogleRoadMap; 

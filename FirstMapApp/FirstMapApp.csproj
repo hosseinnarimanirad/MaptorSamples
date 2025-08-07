@@ -10,8 +10,8 @@
 
 
   <ItemGroup>
-    <PackageReference Include="IRI.Maptor.Bas.SqlSpatialLoader" Version="2.5.1" />
-    <PackageReference Include="IRI.Maptor.Jab.Controls" Version="2.5.0" />
+    <PackageReference Include="IRI.Maptor.Bas.SqlSpatialLoader" Version="2.5.2" />
+    <PackageReference Include="IRI.Maptor.Jab.Controls" Version="2.5.2" />
   </ItemGroup>
 
 
