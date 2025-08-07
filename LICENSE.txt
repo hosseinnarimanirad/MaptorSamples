@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-https://github.com/hosseinnarimanirad/Maptor
+https://github.com/hosseinnarimanirad/MaptorSamples
 Copyright (c) 2017-2026 Hossein Narimani Rad
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
