@@ -21,21 +21,21 @@
         
         <maptor:LanguageCombo/>
         
-        <StackPanel Grid.Column="1">
-            <Border BorderBrush="Black" BorderThickness="1" Margin="2">
-                <StackPanel Orientation="Horizontal" >
-                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding ClearText}" Command="{Binding ClearAllCommand}"/>
-                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding FullExtentText}" Command="{Binding FullExtentCommand}"/>
-                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding AddShapefileText}" Command="{Binding AddShapefileCommand}"/>
-                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding MeasureLengthText}" Command="{Binding MeasureLengthCommand}"/>
-                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding MeasureAreaText}" Command="{Binding MeasureAreaCommand}"/>
-                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPointText}" Command="{Binding DrawPointCommand}"/>
-                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPolylineText}" Command="{Binding DrawPolylineCommand}"/>
-                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPolygonText}" Command="{Binding DrawPolygonCommand}"/>
-                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
-                </StackPanel>
-            </Border> 
+<StackPanel Grid.Column="1">
+    <Border BorderBrush="Black" BorderThickness="1" Margin="2">
+        <StackPanel Orientation="Horizontal" >
+            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding ClearText}" Command="{Binding ClearAllCommand}"/>
+            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding FullExtentText}" Command="{Binding FullExtentCommand}"/>
+            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding AddShapefileText}" Command="{Binding AddShapefileCommand}"/>
+            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding MeasureLengthText}" Command="{Binding MeasureLengthCommand}"/>
+            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding MeasureAreaText}" Command="{Binding MeasureAreaCommand}"/>
+            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPointText}" Command="{Binding DrawPointCommand}"/>
+            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPolylineText}" Command="{Binding DrawPolylineCommand}"/>
+            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPolygonText}" Command="{Binding DrawPolygonCommand}"/>
+            <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
         </StackPanel>
+    </Border> 
+</StackPanel>
 
         <maptor:MapViewer Grid.Row="1" Grid.Column="1" x:Name="map" BorderBrush="Black" BorderThickness="1"/>
 
