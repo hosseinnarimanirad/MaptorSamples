@@ -63,7 +63,7 @@ dotnet add package IRI.Maptor.Jab.Controls
 ```csharp
 private async void Window_Loaded(object sender, RoutedEventArgs e)
 {
-    // Initial Configs
+    // initial setup
     System.Text.Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
     SqlServerTypes.Utilities.LoadNativeAssembliesv14(Environment.CurrentDirectory);
 

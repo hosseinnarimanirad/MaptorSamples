@@ -15,7 +15,7 @@ public partial class MainWindow : Window
 
     private async void Window_Loaded(object sender, RoutedEventArgs e)
     {
-        // load prerequisites 
+        // initial setup
         System.Text.Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
         try
