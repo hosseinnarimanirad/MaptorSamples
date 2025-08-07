@@ -1,15 +1,7 @@
-﻿using IRI.Jab.Common.TileServices;
-using IRI.Sta.Common.Primitives;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using IRI.Maptor.Sta.Common.Primitives;
+using IRI.Maptor.Jab.Common.TileServices;
+using IRI.Maptor.Jab.Controls.Presenter;
 
 namespace FirstMapApp;
 /// <summary>
@@ -24,7 +16,16 @@ public partial class MainWindow : Window
 
     private async void Window_Loaded(object sender, RoutedEventArgs e)
     {
-        var presenter = new ViewModel.AppViewModel();
+        try
+        {
+            SqlServerTypes.Utilities.LoadNativeAssembliesv14(Environment.CurrentDirectory);
+        }
+        catch
+        {
+            MessageBox.Show("error!");
+        }
+
+        var presenter = new MapApplicationPresenter();
 
         await this.map.Register(presenter);
 
@@ -32,8 +33,8 @@ public partial class MainWindow : Window
 
         this.DataContext = presenter;
 
-        presenter.ZoomToExtent(BoundingBoxes.IranWebMercatorBoundingBox, false, isNewExtent: true);
+        presenter.ZoomToExtent(BoundingBoxes.WebMercator_Africa, false, isNewExtent: true);
 
-        presenter.SelectedMapProvider = TileMapProviderFactory.GoogleRoadMap;
+        presenter.SelectedMapProvider = TileMapProviderFactory.GoogleRoadMap; 
     }
 }

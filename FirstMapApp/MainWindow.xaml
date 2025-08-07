@@ -1,17 +1,15 @@
 ﻿<Window x:Class="FirstMapApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mahApp="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        xmlns:localization="clr-namespace:IRI.Jab.Common.Localization;assembly=IRI.Jab.Common"
-        xmlns:iriJabControls="clr-namespace:IRI.Jab.Controls;assembly=IRI.Jab.Controls" 
-        xmlns:iriJabMapControls="clr-namespace:IRI.Jab.Controls.View.Map;assembly=IRI.Jab.Controls"
-        Loaded="Window_Loaded" Title="Sample Maptor App" Height="600" Width="850">
+        xmlns:mahApp="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" 
+        xmlns:maptor="clr-namespace:IRI.Maptor.Jab.Controls.View;assembly=IRI.Maptor.Jab.Controls"  
+        Loaded="Window_Loaded" Title="Sample Maptor App" Height="700" Width="900" FlowDirection="{Binding CurrentFlowDirection}">
     <Window.Resources>
         <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource {x:Type TabItem}}">
             <Setter Property="mahApp:HeaderedControlHelper.HeaderFontSize" Value="12" />
         </Style>
     </Window.Resources>
-    <Grid >
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" MinWidth="200"/>
             <ColumnDefinition/>
@@ -20,58 +18,41 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
-        <ComboBox ItemsSource="{Binding AvailableLanguages}" SelectedItem="{Binding SelectedLanguage}" HorizontalContentAlignment="Center" VerticalAlignment="Center">
-            <ComboBox.DataContext>
-                <localization:LanguageSelectorViewModel/>
-            </ComboBox.DataContext>
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Margin="3">
-                        <Image Source="{Binding FlagUri}" Stretch="UniformToFill" Width="16" Height="16" Margin="0,0,5,0"/>
-                        <TextBlock Text="{Binding NativeName}" VerticalAlignment="Center" FlowDirection="{Binding TextFlowDirection}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
-
+        
+        <maptor:LanguageCombo/>
+        
         <StackPanel Grid.Column="1">
-            <StackPanel.Resources>
-                <Style TargetType="Button" BasedOn="{StaticResource flatButtonPrimary}">
-                    <Setter Property="Margin" Value="4"/>
-                </Style>
-            </StackPanel.Resources>
             <Border BorderBrush="Black" BorderThickness="1" Margin="2">
                 <StackPanel Orientation="Horizontal" >
-                    <Button Content="Clear" Command="{Binding ClearAllCommand}"/>
-                    <Button Content="Full extent" Command="{Binding FullExtentCommand}"/>
-                    <Button Content="Add shapefile" Command="{Binding AddShapefileCommand}"/>
-                    <Button Content="Measure Length" Command="{Binding MeasureLengthCommand}"/>
-                    <Button Content="Measure Area" Command="{Binding MeasureAreaCommand}"/>
-                    <Button Content="Draw Point" Command="{Binding DrawPointCommand}"/>
-                    <Button Content="Draw Polyline" Command="{Binding DrawPolylineCommand}"/>
-                    <Button Content="Draw Polygon" Command="{Binding DrawPolygonCommand}"/>
-                    <Button Content="Go To" Command="{Binding GoToCommand}"/>
+                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding ClearText}" Command="{Binding ClearAllCommand}"/>
+                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding FullExtentText}" Command="{Binding FullExtentCommand}"/>
+                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding AddShapefileText}" Command="{Binding AddShapefileCommand}"/>
+                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding MeasureLengthText}" Command="{Binding MeasureLengthCommand}"/>
+                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding MeasureAreaText}" Command="{Binding MeasureAreaCommand}"/>
+                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPointText}" Command="{Binding DrawPointCommand}"/>
+                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPolylineText}" Command="{Binding DrawPolylineCommand}"/>
+                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding DrawPolygonText}" Command="{Binding DrawPolygonCommand}"/>
+                    <Button Margin="4" Style="{StaticResource flatButtonPrimary}" Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
                 </StackPanel>
             </Border> 
         </StackPanel>
 
-        <iriJabControls:MapViewer Grid.Row="1" Grid.Column="1" x:Name="map" BorderBrush="Black" BorderThickness="1"/>
+        <maptor:MapViewer Grid.Row="1" Grid.Column="1" x:Name="map" BorderBrush="Black" BorderThickness="1"/>
 
-        <iriJabControls:MapInfoView Grid.Row="1" Grid.Column="1" DataContext="{Binding }"/>
+        <maptor:MapInfoView Grid.Row="1" Grid.Column="1" DataContext="{Binding }"/>
 
-        <iriJabMapControls:CoordinatePanelView Grid.Column="1" Grid.Row="1" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                                                DataContext="{Binding CoordinatePanel}" Position="{Binding CurrentPoint, ElementName=map}"/>
+        <maptor:CoordinatePanelView Grid.Column="1" Grid.Row="1" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                                    DataContext="{Binding CoordinatePanel}" Position="{Binding CurrentPoint, ElementName=map}"/>
 
         <StackPanel Grid.Row="1">
-            <Expander Header="Base maps" DockPanel.Dock="Top" IsExpanded="True" Margin="0,1,0,0" Cursor="Hand">
-                <ComboBox ItemsSource="{Binding MapProviders}" SelectedItem="{Binding SelectedMapProvider, Mode=TwoWay}" VerticalAlignment="Center" DisplayMemberPath="Title"/>
+            <Expander DockPanel.Dock="Top" IsExpanded="True" Margin="0,1,0,0" Cursor="Hand" Header="{Binding BaseMapsText}">
+                <ComboBox ItemsSource="{Binding MapProviders}" SelectedItem="{Binding SelectedMapProvider, Mode=TwoWay}" DisplayMemberPath="Title"/>
             </Expander>
-            <Expander Header="Drawings" DockPanel.Dock="Top" IsExpanded="True" Margin="0,1,0,0" Cursor="Hand">
-                <iriJabMapControls:MapDrawingLegendView MinHeight="90"/>
+            <Expander DockPanel.Dock="Top" IsExpanded="True" Margin="0,1,0,0" Cursor="Hand" Header="{Binding DrawingsText}">
+                <maptor:MapDrawingLegendView MinHeight="90"/>
             </Expander>
-            <Expander Header="layers" IsExpanded="True" Margin="0,1,0,0" Cursor="Hand">
-                <iriJabMapControls:MapLegendWithOptionsView EnableFilterMode="True" DataContext="{Binding Layers}" GroupName="B"/>
+            <Expander DockPanel.Dock="Top" IsExpanded="True" Margin="0,1,0,0" Cursor="Hand" Header="{Binding LayersText}">
+                <maptor:MapLegendWithOptionsView EnableFilterMode="True" DataContext="{Binding Layers}" GroupName="B"/>
             </Expander>
         </StackPanel>
     </Grid>
