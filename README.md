@@ -35,19 +35,12 @@ git clone https://github.com/hosseinnarimanirad/Maptor.git
 ### 📍Project Setup
 1. Create a new WPF project targeting .NET 8 or higher.
 
-2. Install Required Packages
+2. Install Required Package
 ```bash
-dotnet add package IRI.Maptor.Bas.SqlSpatialLoader
 dotnet add package IRI.Maptor.Jab.Controls
 ```
-3. Configure SQL Server Types
-   - Right-click all files under:
-     - ```SqlServerTypes/x64```
-     - ```SqlServerTypes/x86```
-   - Set "Copy to Output Directory" to 'Copy if newer'
-   - Reference Microsoft.SqlServer.Types from the ```Deploy/MicrosoftSqlServerTypes/v14``` folder
 
-4. Add Map Control to Your XAML
+3. Add Map Control to Your XAML
 ```xaml
 <Window ...
         xmlns:maptor="clr-namespace:IRI.Maptor.Jab.Controls.View;assembly=IRI.Maptor.Jab.Controls">    
@@ -57,13 +50,12 @@ dotnet add package IRI.Maptor.Jab.Controls
 </Window>
 ```
 
-5. Initialize the Map (Code-Behind)
+4. Initialize the Map (Code-Behind)
 ```csharp
 private async void Window_Loaded(object sender, RoutedEventArgs e)
 {
     // initial setup
     System.Text.Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-    SqlServerTypes.Utilities.LoadNativeAssembliesv14(Environment.CurrentDirectory);
 
     // Initialize map presenter (viewmodel)
     var presenter = new MapApplicationPresenter();
