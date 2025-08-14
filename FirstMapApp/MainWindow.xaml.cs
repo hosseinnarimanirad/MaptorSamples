@@ -17,16 +17,7 @@ public partial class MainWindow : Window
     {
         // initial setup
         System.Text.Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-
-        try
-        {
-            SqlServerTypes.Utilities.LoadNativeAssembliesv14(Environment.CurrentDirectory);
-        }
-        catch
-        {
-            MessageBox.Show("error!");
-        }
-
+         
         // Initialize map presenter (viewmodel)
         var presenter = new MapApplicationPresenter();
         await this.map.Register(presenter);
