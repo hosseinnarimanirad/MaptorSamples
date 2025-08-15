@@ -37,7 +37,7 @@ git clone https://github.com/hosseinnarimanirad/Maptor.git
 
 2. Install Required Package
 ```bash
-dotnet add package IRI.Maptor.Jab.Controls
+dotnet add package IRI.Maptor.Jab.Controls --version 2.7.1-alpha.20
 ```
 
 3. Add Map Control to Your XAML

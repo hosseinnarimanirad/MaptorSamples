@@ -8,11 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-
   <ItemGroup>
-    <PackageReference Include="IRI.Maptor.Jab.Controls" Version="2.7.0-alpha.18" />
+    <PackageReference Include="IRI.Maptor.Jab.Controls" Version="2.7.1-alpha.20" />
   </ItemGroup>
-
- 
 
 </Project>
