@@ -32,25 +32,61 @@ git clone https://github.com/hosseinnarimanirad/Maptor.git
 4. Build and run the application
 
 ## 🛠️ Building Your Own Map Application
-### 📍Project Setup
-1. Create a new WPF project targeting .NET 8 or higher.
+### Project Setup
+1. Create a new **WPF project** Visual Studio targeting .NET 8 (or higher).
 
-2. Install Required Package
+2. Install the required Maptor NuGet package
 ```bash
 dotnet add package IRI.Maptor.Jab.Controls --version 2.7.1-alpha.20
 ```
 
-3. Add Map Control to Your XAML
-```xaml
-<Window ...
-        xmlns:maptor="clr-namespace:IRI.Maptor.Jab.Controls.View;assembly=IRI.Maptor.Jab.Controls">    
-    <Grid>
-        <maptor:MapViewer x:Name="map" BorderBrush="Black" BorderThickness="1"/>
-    </Grid>
-</Window>
+3. Reference the Maptor’s resource files in App.xaml
+```
+<Application.Resources>
+    <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.Slider.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.RadioButton.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.TabControl.xaml" />
+
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Amber.xaml" />
+
+            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Styles/ButtonStyles.xaml"/>
+
+            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Shapes/IranBoundaries.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Shapes/Appbar.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Shapes/AppbarExtension.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Shapes/IriShapes.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Shapes/MaterialDesign.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Shapes/Others.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/IRI.Converters.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/IRI.Fonts.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/IRI.Colors.xaml"/>
+        </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+</Application.Resources>
 ```
 
-4. Initialize the Map (Code-Behind)
+### Prepare the map in XAML
+
+1. Define the Maptor namespace in your MainWindow.xaml (or the desired window)
+```xaml
+<Window ...
+        xmlns:maptor="clr-namespace:IRI.Maptor.Jab.Controls.View;assembly=IRI.Maptor.Jab.Controls"> 
+</Window>
+```
+2. Add the MapViewer control along with any other necessary UI elements
+```xaml
+<maptor:MapViewer Grid.Row="1" x:Name="map" BorderBrush="Black" BorderThickness="1"/>
+<maptor:MapInfoView Grid.Row="1" DataContext="{Binding }"/> 
+```
+### Configure the Map in C#
+In the code-behind, configure the map and set up:
+- Google Maps as the base layer
+- An initial map extent for your view
+This is done in the `Window.Loaded` event
 ```csharp
 private async void Window_Loaded(object sender, RoutedEventArgs e)
 {
@@ -67,14 +103,17 @@ private async void Window_Loaded(object sender, RoutedEventArgs e)
     presenter.ZoomToExtent(BoundingBoxes.WebMercator_Africa, false, isNewExtent: true);
 }
  ```
-### 📍Add shapefiles to map
+
+### Add Core Functionalities
+
+📍**Add shapefiles to map**  
 Add a button and set its command to `AddShapefileCommand`
 
 ```xaml
 <Button Content="{Binding AddShapefileText}" Command="{Binding AddShapefileCommand}"/>
 ```
 
-### 📍Measure distance and area
+📍**Measure distance and area**  
 Add buttons and set their commands to `MeasureLengthCommand` and `MeasureAreaCommand`.
 
 ```xaml
@@ -84,7 +123,7 @@ Add buttons and set their commands to `MeasureLengthCommand` and `MeasureAreaCom
 </StackPanel>
 ```
 
-### 📍Add drawings to map
+📍**Add drawings to map**  
 To draw point/line/polygon add buttons and set their commands.
 ```xaml
 <StackPanel Orientation="Horizontal" > 
@@ -94,13 +133,13 @@ To draw point/line/polygon add buttons and set their commands.
 </StackPanel>
 ```
 
-### 📍Use Go To dialog
+📍**Use Go To dialog**  
 To user Go To dialog all you need is to add a button and set its command.
 ```xaml
  <Button Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
 ```
 
-### 📍Show current mouse position
+📍**Show current mouse position**  
 You can show the current mouse position in geographic (wgs84), utm, mercator, and several other spatial reference systems. To do that just add the `CoordinatePanelView` component and bind its `Position` property to the `map`:
 ```xaml
 <maptor:CoordinatePanelView DataContext="{Binding CoordinatePanel}" Position="{Binding CurrentPoint, ElementName=map}"/>
