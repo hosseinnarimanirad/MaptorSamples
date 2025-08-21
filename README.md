@@ -18,11 +18,11 @@ A demonstration of building map-enabled applications with minimal code using the
 
 ## 🚀 Getting Started
 
-### 📋 Prerequisites
+### Prerequisites
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 - Visual Studio 2019 or newer
 
-### ⚙️ Installation
+### Installation
 1. Clone the repository:
 ```bash
 git clone https://github.com/hosseinnarimanirad/Maptor.git
