@@ -6,9 +6,9 @@ using System.Text;
 
 namespace FirstMapApp;
 
-public partial class MainWindow : Window
+public partial class DrawingLegendWindow : Window
 {
-    public MainWindow()
+    public DrawingLegendWindow()
     {
         InitializeComponent();
     }

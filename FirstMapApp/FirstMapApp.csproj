@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IRI.Maptor.Jab.Controls" Version="2.7.1-alpha.20" />
+    <PackageReference Include="IRI.Maptor.Jab.Controls" Version="2.7.4" />
   </ItemGroup>
 
 </Project>
