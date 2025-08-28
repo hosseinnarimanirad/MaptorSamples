@@ -13,18 +13,18 @@ public partial class DrawingLegendWindow : Window
         InitializeComponent();
     }
 
-private async void Window_Loaded(object sender, RoutedEventArgs e)
-{
-    // initial setup
-    System.Text.Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-         
-    // Initialize map presenter (viewmodel)
-    var presenter = new MapApplicationPresenter();
-    await this.map.Register(presenter);
-    presenter.Initialize(this);
+    private async void Window_Loaded(object sender, RoutedEventArgs e)
+    {
+        // initial setup
+        System.Text.Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-    // Configure initial view
-    presenter.SelectedMapProvider = TileMapProviderFactory.GoogleRoadMap;
-    presenter.ZoomToExtent(BoundingBoxes.WebMercator_Africa, false, isNewExtent: true);
-}
+        // Initialize map presenter (viewmodel)
+        var presenter = new MapApplicationPresenter();
+        await this.map.Register(presenter);
+        presenter.Initialize(this);
+
+        // Configure initial view
+        presenter.SelectedMapProvider = TileMapProviderFactory.GoogleRoadMap;
+        presenter.ZoomToExtent(BoundingBoxes.WebMercator_Africa, false, isNewExtent: true);
+    }
 }
