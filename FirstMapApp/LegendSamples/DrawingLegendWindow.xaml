@@ -6,8 +6,7 @@
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:localization="clr-namespace:IRI.Maptor.Jab.Common.Localization;assembly=IRI.Maptor.Jab.Common"
         Loaded="Window_Loaded" Title="Sample Maptor App" Height="700" Width="900" FlowDirection="{Binding CurrentFlowDirection}">
-    <Window.Resources>
-        <ObjectDataProvider x:Key="Localization" ObjectInstance="{x:Static localization:LocalizationManager.Instance}"/>
+    <Window.Resources> 
         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource flatButtonPrimary}">
             <Setter Property="Margin" Value="4"/>
         </Style>
@@ -28,16 +27,15 @@
                     <Style TargetType="Button" BasedOn="{StaticResource flatButtonPrimary}">
                         <Setter Property="Margin" Value="4"/>
                     </Style>
-                </StackPanel.Resources> 
-                <Button Content="{Binding [cmd_general_clearAll], Source={StaticResource Localization}}" Command="{Binding ClearAllCommand}"/>
-                <Button Content="{Binding [cmd_general_drawPoint], Source={StaticResource Localization}}" Command="{Binding DrawPointCommand}"/>
-                <Button Content="{Binding [cmd_general_drawPolyline], Source={StaticResource Localization}}" Command="{Binding DrawPolylineCommand}"/>
-                <Button Content="{Binding [cmd_general_drawPolygon], Source={StaticResource Localization}}" Command="{Binding DrawPolygonCommand}"/>
-                <Button Content="{Binding [cmd_general_addTextToMap], Source={StaticResource Localization}}" Command="{Binding AddTextToMapCommand}"/>
+                </StackPanel.Resources>                 
+                <Button Content="DrawPoint" Command="{Binding DrawPointCommand}"/>
+                <Button Content="DrawPolyline" Command="{Binding DrawPolylineCommand}"/>
+                <Button Content="DrawPolygon" Command="{Binding DrawPolygonCommand}"/>
+                <Button Content="AddTextToMap" Command="{Binding AddTextToMapCommand}"/>
             </StackPanel>
         </Border>
 
-        <Expander Header="{Binding DrawingsText}" IsExpanded="True" Margin="0,1,0,0" Cursor="Hand">
+        <Expander Header="Drawing Legend" IsExpanded="True" Margin="0,1,0,0" Cursor="Hand" Grid.RowSpan="2">
             <maptor:MapDrawingLegendView MinHeight="90"/>
         </Expander>
 
