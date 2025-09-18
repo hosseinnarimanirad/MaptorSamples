@@ -33,14 +33,16 @@ git clone https://github.com/hosseinnarimanirad/Maptor.git
 
 ## 🛠️ Building Your Own Map Application
 ### Project Setup
-1. Create a new **WPF project** Visual Studio targeting .NET 8 (or higher).
+📍 Create a new **WPF project** Visual Studio targeting .NET 8 (or higher).
+ 
+<img width="525" height="308" alt="image" src="https://github.com/user-attachments/assets/d0e28161-e6b6-493d-83c0-02ea612ff88f" />
 
-2. Install the required Maptor NuGet package
+📍 Install the required Maptor NuGet package
 ```bash
-dotnet add package IRI.Maptor.Jab.Controls --version 2.7.1-alpha.20
+dotnet add package IRI.Maptor.Jab.Controls 
 ```
 
-3. Reference the Maptor’s resource files in App.xaml
+📍 Reference the Maptor’s resource files in App.xaml
 ```
 <Application.Resources>
     <ResourceDictionary>
@@ -54,12 +56,7 @@ dotnet add package IRI.Maptor.Jab.Controls --version 2.7.1-alpha.20
             <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Amber.xaml" />
 
             <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Styles/ButtonStyles.xaml"/>
-
-            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Shapes/IranBoundaries.xaml"/>
-            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Shapes/Appbar.xaml"/>
-            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Shapes/AppbarExtension.xaml"/>
-            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Shapes/IriShapes.xaml"/>
-            <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Shapes/MaterialDesign.xaml"/>
+  
             <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/Shapes/Others.xaml"/>
             <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/IRI.Converters.xaml"/>
             <ResourceDictionary Source="pack://application:,,,/IRI.Maptor.Jab.Common;component/Assets/IRI.Fonts.xaml"/>
@@ -71,13 +68,13 @@ dotnet add package IRI.Maptor.Jab.Controls --version 2.7.1-alpha.20
 
 ### Prepare the map in XAML
 
-1. Define the Maptor namespace in your MainWindow.xaml (or the desired window)
+📍 Define the Maptor namespace in your MainWindow.xaml (or the desired window)
 ```xaml
 <Window ...
         xmlns:maptor="clr-namespace:IRI.Maptor.Jab.Controls.View;assembly=IRI.Maptor.Jab.Controls"> 
 </Window>
 ```
-2. Add the MapViewer control along with any other necessary UI elements
+📍 Add the MapViewer control along with any other necessary UI elements
 ```xaml
 <maptor:MapViewer Grid.Row="1" x:Name="map" BorderBrush="Black" BorderThickness="1"/>
 <maptor:MapInfoView Grid.Row="1" DataContext="{Binding }"/> 
@@ -110,7 +107,7 @@ private async void Window_Loaded(object sender, RoutedEventArgs e)
 Add a button and set its command to `AddShapefileCommand`
 
 ```xaml
-<Button Content="{Binding AddShapefileText}" Command="{Binding AddShapefileCommand}"/>
+<Button Content="Add Shapefile" Command="{Binding AddShapefileCommand}"/>
 ```
 
 📍**Measure distance and area**  
@@ -118,8 +115,8 @@ Add buttons and set their commands to `MeasureLengthCommand` and `MeasureAreaCom
 
 ```xaml
 <StackPanel Orientation="Horizontal" >     
-    <Button Content="{Binding MeasureLengthText}" Command="{Binding MeasureLengthCommand}"/>
-    <Button Content="{Binding MeasureAreaText}" Command="{Binding MeasureAreaCommand}"/>
+    <Button Content="Measure Length}" Command="{Binding MeasureLengthCommand}"/>
+    <Button Content="Measure Area}" Command="{Binding MeasureAreaCommand}"/>
 </StackPanel>
 ```
 
@@ -127,16 +124,16 @@ Add buttons and set their commands to `MeasureLengthCommand` and `MeasureAreaCom
 To draw point/line/polygon add buttons and set their commands.
 ```xaml
 <StackPanel Orientation="Horizontal" > 
-    <Button Content="{Binding DrawPointText}" Command="{Binding DrawPointCommand}"/>
-    <Button Content="{Binding DrawPolylineText}" Command="{Binding DrawPolylineCommand}"/>
-    <Button Content="{Binding DrawPolygonText}" Command="{Binding DrawPolygonCommand}"/> 
+    <Button Content="Draw Point" Command="{Binding DrawPointCommand}"/>
+    <Button Content="Draw Polyline" Command="{Binding DrawPolylineCommand}"/>
+    <Button Content="Draw Polygon" Command="{Binding DrawPolygonCommand}"/> 
 </StackPanel>
 ```
 
 📍**Use Go To dialog**  
 To user Go To dialog all you need is to add a button and set its command.
 ```xaml
- <Button Content="{Binding GoToText}" Command="{Binding GoToCommand}"/>
+ <Button Content="Go To" Command="{Binding GoToCommand}"/>
 ```
 
 📍**Show current mouse position**  
