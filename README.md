@@ -16,22 +16,12 @@ A demonstration of building map-enabled applications with minimal code using the
 - 🔄 **Coordinate System Transformations**
 - 🖱️ **Mouse Coordinate Tracking**
 
-## 🚀 Getting Started
+## 🚀 Building Your Own Map Application
 
 ### Prerequisites
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 - Visual Studio 2019 or newer
 
-### Installation
-1. Clone the repository:
-```bash
-git clone https://github.com/hosseinnarimanirad/Maptor.git
-```
-2. Open the solution file
-3. Restore NuGet packages
-4. Build and run the application
-
-## 🛠️ Building Your Own Map Application
 ### Project Setup
 📍 Create a new **WPF project** Visual Studio targeting .NET 8 (or higher).
  
@@ -115,8 +105,8 @@ Add buttons and set their commands to `MeasureLengthCommand` and `MeasureAreaCom
 
 ```xaml
 <StackPanel Orientation="Horizontal" >     
-    <Button Content="Measure Length}" Command="{Binding MeasureLengthCommand}"/>
-    <Button Content="Measure Area}" Command="{Binding MeasureAreaCommand}"/>
+    <Button Content="Measure Length" Command="{Binding MeasureLengthCommand}"/>
+    <Button Content="Measure Area" Command="{Binding MeasureAreaCommand}"/>
 </StackPanel>
 ```
 
